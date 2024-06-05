@@ -11,9 +11,12 @@ enum expanseType: String, CaseIterable  {
     case Personal = "Personal"
 }
 
+
+
 struct AddView: View {
     @State private var name: String = ""
     @State private var type: expanseType = .Business
+    @State private var currency: currencyType = .EUR
     @State private var amount: Double = 0.0
     @Environment(\.dismiss) var dismiss
     
@@ -24,19 +27,32 @@ struct AddView: View {
         NavigationStack {
             Form {
                 TextField("Name", text: $name)
-            
+                Text("Type of expanse")
                 Picker("Type", selection: $type) {
                     ForEach(expanseType.allCases, id: \.self) { type in
                         Text(type.rawValue)
                     }
                 }
-                TextField("Amount", value: $amount, format: .currency(code: ""))
+                .pickerStyle(.segmented)
+                
+                Text("Type of currency")
+                Picker("Type of currency", selection: $currency) {
+                    ForEach(currencyType.allCases, id: \.self) { type in
+                        Text(type.rawValue)
+                    }
+                }
+                .pickerStyle(.segmented)
+                TextField("Amount", value: $amount, format: .currency(code: "\(currency.rawValue)"))
                     .keyboardType(.decimalPad)
             }
             .navigationTitle("Add new expense")
             .toolbar {
                 Button("Save") {
-                    let item = ExpenseItem(name: name, type: type.rawValue, amount: amount)
+                    let item = ExpenseItem(name: name,
+                                           type: type.rawValue,
+                                           amount: amount,
+                                           currency: currency)
+                  //  print(amount)
                     expenses.items.append(item)
                     dismiss()
                 }
