@@ -19,4 +19,12 @@ struct ExpenseItem: Identifiable, Codable {
     let type: String
     let amount: Double
     let currency: currencyType
+    
+//    private enum CodingKeys: String, CodingKey {
+//        case id
+//        case name
+//        case type
+//        case amount
+//        case currency
+//    }
 }

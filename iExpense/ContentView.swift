@@ -61,17 +61,22 @@ struct ContentView: View {
                     }
                     .onDelete(perform: removeItemPersonal)
                 }
+           
             }
+            
             .navigationTitle("IExpense")
-            .toolbar(content: {
+            .toolbar {
                 Button("Add", systemImage: "plus") {
                     showingAddExpense = true
                 }
-            })
+            }
+            .navigationDestination(isPresented: $showingAddExpense) {
+                AddView(expenses: expenses)
+            }
         }
-        .sheet(isPresented: $showingAddExpense) {
-           AddView(expenses: expenses)
-        }
+//        .sheet(isPresented: $showingAddExpense) {
+//           AddView(expenses: expenses)
+//        }
     }
     
     private func returnColor(_ amount: Double)-> Color {
