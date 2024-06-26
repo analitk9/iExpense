@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 
 enum currencyType: String, CaseIterable, Codable {
     case USD = "USD"
@@ -13,12 +14,20 @@ enum currencyType: String, CaseIterable, Codable {
     case EUR = "EUR"
 }
 
-struct ExpenseItem: Identifiable, Codable {
+@Model
+class ExpenseItem {
     var id: UUID =  UUID()
     let name: String
     let type: String
     let amount: Double
     let currency: currencyType
+    init( name: String, type: String, amount: Double, currency: currencyType) {
+     
+        self.name = name
+        self.type = type
+        self.amount = amount
+        self.currency = currency
+    }
     
 //    private enum CodingKeys: String, CodingKey {
 //        case id

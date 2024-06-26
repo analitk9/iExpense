@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 enum expanseType: String, CaseIterable  {
     case Business = "Business"
     case Personal = "Personal"
@@ -14,6 +15,8 @@ enum expanseType: String, CaseIterable  {
 
 
 struct AddView: View {
+    @Environment(\.modelContext) var modelContext
+    
     @State private var name: String = "enter name of expanse"
     @State private var type: expanseType = .Business
     @State private var currency: currencyType = .EUR
@@ -21,7 +24,7 @@ struct AddView: View {
     @Environment(\.dismiss) var dismiss
     
     
-    var expenses: Expenses
+ //   var expenses: Expenses
     
     var body: some View {
         NavigationStack {
@@ -54,8 +57,9 @@ struct AddView: View {
                                            type: type.rawValue,
                                            amount: amount,
                                            currency: currency)
-                  //  print(amount)
-                    expenses.items.append(item)
+
+//                    expenses.items.append(item)
+                    modelContext.insert(item)
                     dismiss()
                 }
             }
@@ -66,5 +70,5 @@ struct AddView: View {
 }
 
 #Preview {
-    AddView(expenses: Expenses())
+    AddView()
 }

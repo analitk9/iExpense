@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		648BAC392C2C34C300E2673A /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BAC382C2C34C300E2673A /* ListItemView.swift */; };
 		648EE9DF2C0F466900D24596 /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648EE9DE2C0F466900D24596 /* iExpenseApp.swift */; };
 		648EE9E12C0F466900D24596 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648EE9E02C0F466900D24596 /* ContentView.swift */; };
 		648EE9E32C0F466F00D24596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 648EE9E22C0F466F00D24596 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		648BAC382C2C34C300E2673A /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		648EE9DB2C0F466900D24596 /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		648EE9DE2C0F466900D24596 /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
 		648EE9E02C0F466900D24596 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				648EE9DE2C0F466900D24596 /* iExpenseApp.swift */,
 				648EE9E02C0F466900D24596 /* ContentView.swift */,
+				648BAC382C2C34C300E2673A /* ListItemView.swift */,
 				648EE9F22C106AFD00D24596 /* AddView.swift */,
 				648EE9EC2C105CCA00D24596 /* ExpenseItem.swift */,
 				648EE9F02C10651400D24596 /* SwiftUIView.swift */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				648EE9EF2C105DED00D24596 /* Expenses.swift in Sources */,
+				648BAC392C2C34C300E2673A /* ListItemView.swift in Sources */,
 				648EE9E12C0F466900D24596 /* ContentView.swift in Sources */,
 				648EE9F32C106AFD00D24596 /* AddView.swift in Sources */,
 				648EE9ED2C105CCA00D24596 /* ExpenseItem.swift in Sources */,
